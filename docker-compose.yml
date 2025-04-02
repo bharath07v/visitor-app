@@ -1,0 +1,35 @@
+# version: '3'
+
+# services: 
+#   my-redis-server:
+#     image: redis
+#     expose:
+#       - '6379'
+#   visitor-app:
+#     build:
+#       dockerfile:Dockerfile
+#     context: ./
+#     ports:
+#     - '9999:9999'
+#     depends_on:
+#     - my-redis-server
+version: '3.8'
+
+services:
+  my-redis-server:
+    image: redis
+    expose:
+      - '6379'
+    volumes:
+      - ./redis-data:/data
+
+  visitor-app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - '9999:9999'
+    depends_on:
+      - my-redis-server
+    volumes:
+      - ./src:/usr/visitorapp/src

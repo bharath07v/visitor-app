@@ -67,7 +67,7 @@ app.get('/', async (req, res) => {
     let currVisits = parseInt(visitors) || 1;
 
     // Send the response back to the user
-    res.send('You are visitor: ' + currVisits);
+    res.send('hi bharath kumar ,  visitor: ' + currVisits);
 
     // Increment and save the new value to the database
     await client.set('visitors', currVisits + 1);
