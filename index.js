@@ -41,7 +41,7 @@ const app = express();
 // Create a Redis client
 const client = createClient({
   socket: {
-    host: 'localhost',
+    host: 'my-redis-server',
     port: 6379,
   }
 });
