@@ -1,1 +1,1 @@
-#simple index2.js
+// #simple index2.js
